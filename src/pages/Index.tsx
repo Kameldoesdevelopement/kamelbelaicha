@@ -31,8 +31,8 @@ const Index = () => {
               </div>
             </Link>
 
-            <div className="old-border p-6 bg-card flex items-center justify-center">
-              <span className="font-label text-xs text-dim tracking-[0.2em] uppercase">
+            <div className="botanical-border p-6 bg-card flex items-center justify-center">
+              <span className="font-label text-xs text-moss tracking-[0.2em] uppercase">
                 [ more projects coming ]
               </span>
             </div>
@@ -44,7 +44,7 @@ const Index = () => {
       <section className="px-6 py-20 border-t border-border">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
           <div>
-            <div className="tape-label inline-block mb-4">about</div>
+            <div className="tape-label-blue inline-block mb-4">about</div>
           </div>
           <div className="md:col-span-2">
             <p className="font-mono text-sm text-muted-foreground leading-loose">
@@ -55,7 +55,7 @@ const Index = () => {
             </p>
             <Link
               to="/about"
-              className="inline-block mt-6 font-label text-[10px] text-primary tracking-[0.15em] uppercase border-b border-primary/30 pb-0.5 hover:border-primary transition-colors"
+              className="inline-block mt-6 font-label text-[10px] text-crt-blue tracking-[0.15em] uppercase border-b border-accent/30 pb-0.5 hover:border-accent transition-colors"
             >
               read more →
             </Link>

@@ -13,7 +13,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           <span className="font-label text-xs text-dim tracking-[0.15em] uppercase">
             © 2026 Kamel Belaicha
           </span>
-          <span className="font-label text-xs text-dim tracking-[0.15em]">
+          <span className="font-label text-xs text-rose-mist tracking-[0.15em]">
             [ archived ]
           </span>
         </div>
