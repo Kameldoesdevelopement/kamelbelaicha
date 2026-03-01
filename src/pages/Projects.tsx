@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import { ExternalLink } from "lucide-react";
-import crtGlow from "@/assets/crt-glow.jpg";
+import projectSparkstore from "@/assets/project-sparkstore.jpg";
+import atmosphereTexture from "@/assets/atmosphere-texture.jpg";
 
 const projects = [
   {
@@ -12,66 +13,72 @@ const projects = [
     tech: ["React", "TypeScript", "Tailwind CSS"],
     link: "https://sparkstoredz.lovable.app",
     status: "live",
+    image: projectSparkstore,
   },
 ];
 
 const Projects = () => {
   return (
     <Layout>
-      <section className="px-6 py-20 min-h-[80vh]">
-        <div className="max-w-6xl mx-auto">
+      <section className="px-6 py-20 min-h-[80vh] relative overflow-hidden">
+        {/* Atmosphere */}
+        <div className="absolute inset-0 z-0">
+          <img src={atmosphereTexture} alt="" className="w-full h-full object-cover opacity-[0.03]" />
+        </div>
+
+        <div className="max-w-5xl mx-auto relative z-10">
           <div className="tape-label inline-block mb-4">index / projects</div>
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4 text-glow">
+          <h1 className="font-display text-4xl md:text-6xl font-light text-foreground mb-4 text-glow">
             Projects
           </h1>
-          <p className="font-mono text-sm text-muted-foreground mb-16 max-w-lg">
+          <p className="font-body text-base text-muted-foreground mb-20 max-w-lg">
             A collection of things I've built. Each one archived here as a record of process and craft.
           </p>
 
-          <div className="space-y-8">
+          <div className="space-y-12">
             {projects.map((project) => (
               <a
                 key={project.id}
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block old-border bg-card hover:bg-muted/50 transition-all duration-500 layered-card relative overflow-hidden"
+                className="group block relative overflow-hidden"
               >
                 {/* Project image */}
                 <div className="aspect-[21/9] overflow-hidden relative">
                   <img
-                    src={crtGlow}
+                    src={project.image}
                     alt={`${project.title} preview`}
-                    className="w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity duration-700 group-hover:scale-105 transition-transform"
+                    className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-all duration-1000 group-hover:scale-[1.02]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
-                  <div className="absolute top-4 right-4 flex items-center gap-2 font-label text-xs text-crt-blue tracking-[0.1em] uppercase opacity-60 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background/20" />
+                  <div className="absolute top-6 right-6 flex items-center gap-2 font-mono text-[10px] text-accent tracking-[0.15em] uppercase opacity-40 group-hover:opacity-100 transition-opacity duration-500">
                     <span>visit</span>
-                    <ExternalLink size={12} />
+                    <ExternalLink size={10} />
                   </div>
                 </div>
 
-                <div className="p-8">
+                <div className="relative -mt-20 px-8 pb-8">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="font-label text-[10px] text-dim tracking-[0.2em] uppercase">
+                    <span className="font-mono text-[9px] text-muted-foreground tracking-[0.25em] uppercase">
                       {project.id} — {project.category}
                     </span>
-                    <span className="tape-label text-[9px]">{project.status}</span>
+                    <span className="tape-label text-[8px]">{project.status}</span>
                   </div>
 
-                  <h2 className="font-display text-3xl text-foreground mb-3 group-hover:text-primary transition-colors">
+                  <h2 className="font-display text-3xl md:text-4xl font-light text-foreground mb-3 group-hover:text-primary transition-colors duration-500">
                     {project.title}
                   </h2>
 
-                  <p className="font-mono text-sm text-muted-foreground leading-relaxed max-w-lg">
+                  <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-lg">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mt-4">
+                  <div className="flex flex-wrap gap-3 mt-5">
                     {project.tech.map((t) => (
                       <span
                         key={t}
-                        className="font-label text-[10px] text-moss tracking-[0.1em] uppercase border border-secondary px-2 py-0.5"
+                        className="font-mono text-[9px] text-moss tracking-[0.15em] uppercase border border-secondary/50 px-2 py-0.5"
                       >
                         {t}
                       </span>
@@ -83,11 +90,11 @@ const Projects = () => {
           </div>
 
           {/* Empty state */}
-          <div className="mt-8 botanical-border p-12 bg-card flex flex-col items-center justify-center text-center">
-            <div className="font-label text-xs text-moss tracking-[0.2em] uppercase mb-2">
+          <div className="mt-12 botanical-border p-16 bg-card/30 backdrop-blur-sm flex flex-col items-center justify-center text-center">
+            <div className="font-mono text-[10px] text-moss tracking-[0.25em] uppercase mb-3">
               [ archive expanding ]
             </div>
-            <p className="font-mono text-xs text-dim">
+            <p className="font-body text-sm text-muted-foreground">
               More projects will be catalogued here as they emerge from the workshop.
             </p>
           </div>
