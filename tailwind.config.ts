@@ -14,10 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        mono: ['"JetBrains Mono"', 'monospace'],
-        display: ['"Cormorant Garamond"', 'serif'],
-        label: ['"JetBrains Mono"', 'monospace'],
-        body: ['"Darker Grotesque"', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', '"Space Mono"', 'monospace'],
+        display: ['"Playfair Display"', 'serif'],
+        label: ['"Space Mono"', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,700&family=Darker+Grotesque:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:wght@300;400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,82 +6,82 @@
 
 @layer base {
   :root {
-    /* True deep black — like a room with no windows */
-    --background: 240 8% 3%;
-    --foreground: 40 10% 75%;
+    /* Near-black with warm brown undertone — dried blood on old paper */
+    --background: 20 15% 4%;
+    --foreground: 35 15% 72%;
 
-    --card: 240 6% 6%;
-    --card-foreground: 40 10% 75%;
+    --card: 20 12% 7%;
+    --card-foreground: 35 15% 72%;
 
-    --popover: 240 6% 5%;
-    --popover-foreground: 40 10% 75%;
+    --popover: 20 12% 6%;
+    --popover-foreground: 35 15% 72%;
 
-    /* Dried blood rose — wilting, bruised petals */
-    --primary: 345 45% 42%;
-    --primary-foreground: 40 10% 92%;
+    /* Dried burgundy rose — wilting petals from Persistence of Decay */
+    --primary: 350 40% 45%;
+    --primary-foreground: 35 15% 90%;
 
-    /* Decayed forest — moss growing over everything */
-    --secondary: 140 12% 14%;
-    --secondary-foreground: 40 10% 75%;
+    /* Decayed olive — overgrown forgotten things */
+    --secondary: 80 15% 18%;
+    --secondary-foreground: 35 15% 72%;
 
-    /* Void surface */
-    --muted: 240 5% 8%;
-    --muted-foreground: 220 5% 40%;
+    /* Deep warm surface */
+    --muted: 20 10% 10%;
+    --muted-foreground: 30 8% 42%;
 
-    /* Ghostly pale aqua — like light through old glass */
-    --accent: 170 25% 38%;
-    --accent-foreground: 40 10% 92%;
+    /* Ghostly teal — haunted CRT afterglow */
+    --accent: 175 30% 40%;
+    --accent-foreground: 35 15% 90%;
 
     --destructive: 0 50% 35%;
-    --destructive-foreground: 40 10% 92%;
+    --destructive-foreground: 35 15% 90%;
 
-    --border: 240 5% 12%;
-    --input: 240 5% 12%;
-    --ring: 345 45% 42%;
+    --border: 20 8% 14%;
+    --input: 20 8% 14%;
+    --ring: 350 40% 45%;
 
-    --radius: 0rem;
+    --radius: 0.125rem;
 
     /* Custom tokens */
-    --grain-opacity: 0.06;
-    --glow-primary: 345 45% 42%;
-    --glow-crt: 170 30% 42%;
-    --text-dim: 240 4% 24%;
-    --scanline-color: 40 10% 75%;
-    --rose-mist: 345 20% 32%;
-    --crt-blue: 170 30% 45%;
-    --moss: 140 15% 22%;
-    --decay-cream: 38 15% 55%;
+    --grain-opacity: 0.07;
+    --glow-primary: 350 40% 45%;
+    --glow-crt: 175 35% 45%;
+    --text-dim: 20 6% 28%;
+    --scanline-color: 35 15% 72%;
+    --rose-mist: 350 25% 35%;
+    --crt-blue: 175 35% 50%;
+    --moss: 80 20% 25%;
+    --decay-cream: 35 20% 60%;
 
-    --sidebar-background: 240 6% 5%;
-    --sidebar-foreground: 40 10% 75%;
-    --sidebar-primary: 345 45% 42%;
-    --sidebar-primary-foreground: 40 10% 92%;
-    --sidebar-accent: 170 25% 38%;
-    --sidebar-accent-foreground: 40 10% 75%;
-    --sidebar-border: 240 5% 12%;
-    --sidebar-ring: 345 45% 42%;
+    --sidebar-background: 20 12% 6%;
+    --sidebar-foreground: 35 15% 72%;
+    --sidebar-primary: 350 40% 45%;
+    --sidebar-primary-foreground: 35 15% 90%;
+    --sidebar-accent: 175 30% 40%;
+    --sidebar-accent-foreground: 35 15% 72%;
+    --sidebar-border: 20 8% 14%;
+    --sidebar-ring: 350 40% 45%;
   }
 
   .dark {
-    --background: 240 8% 2%;
-    --foreground: 40 10% 75%;
-    --card: 240 6% 4%;
-    --card-foreground: 40 10% 75%;
-    --popover: 240 6% 3%;
-    --popover-foreground: 40 10% 75%;
-    --primary: 345 45% 42%;
-    --primary-foreground: 40 10% 92%;
-    --secondary: 140 12% 12%;
-    --secondary-foreground: 40 10% 75%;
-    --muted: 240 5% 6%;
-    --muted-foreground: 220 5% 36%;
-    --accent: 170 25% 36%;
-    --accent-foreground: 40 10% 92%;
+    --background: 20 15% 3%;
+    --foreground: 35 15% 72%;
+    --card: 20 12% 5%;
+    --card-foreground: 35 15% 72%;
+    --popover: 20 12% 4%;
+    --popover-foreground: 35 15% 72%;
+    --primary: 350 40% 45%;
+    --primary-foreground: 35 15% 90%;
+    --secondary: 80 15% 16%;
+    --secondary-foreground: 35 15% 72%;
+    --muted: 20 10% 8%;
+    --muted-foreground: 30 8% 38%;
+    --accent: 175 30% 38%;
+    --accent-foreground: 35 15% 90%;
     --destructive: 0 50% 35%;
-    --destructive-foreground: 40 10% 92%;
-    --border: 240 5% 10%;
-    --input: 240 5% 10%;
-    --ring: 345 45% 42%;
+    --destructive-foreground: 35 15% 90%;
+    --border: 20 8% 12%;
+    --input: 20 8% 12%;
+    --ring: 350 40% 45%;
   }
 }
 
@@ -92,19 +92,17 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Darker Grotesque', sans-serif;
-    font-weight: 400;
+    font-family: 'IBM Plex Mono', 'Space Mono', monospace;
     cursor: default;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
+    font-family: 'Playfair Display', serif;
   }
 
   ::selection {
-    background: hsl(345 45% 42% / 0.3);
-    color: hsl(40 10% 92%);
+    background: hsl(340 30% 60% / 0.3);
+    color: hsl(45 20% 90%);
   }
 }
 
