@@ -6,83 +6,82 @@
 
 @layer base {
   :root {
-    /* Deep botanical black — like the dark floral backdrop in Persistence of Decay */
-    --background: 160 12% 5%;
-    --foreground: 45 20% 82%;
+    /* Near-black with warm brown undertone — dried blood on old paper */
+    --background: 20 15% 4%;
+    --foreground: 35 15% 72%;
 
-    /* Slightly lifted dark with green undertone */
-    --card: 160 10% 8%;
-    --card-foreground: 45 20% 82%;
+    --card: 20 12% 7%;
+    --card-foreground: 35 15% 72%;
 
-    --popover: 160 10% 7%;
-    --popover-foreground: 45 20% 82%;
+    --popover: 20 12% 6%;
+    --popover-foreground: 35 15% 72%;
 
-    /* Dusty rose / mauve — the floral accent from decay video */
-    --primary: 340 30% 60%;
-    --primary-foreground: 160 12% 5%;
+    /* Dried burgundy rose — wilting petals from Persistence of Decay */
+    --primary: 350 40% 45%;
+    --primary-foreground: 35 15% 90%;
 
-    /* Deep moss green — botanical, overgrown, reclaimed */
-    --secondary: 150 25% 22%;
-    --secondary-foreground: 45 20% 82%;
+    /* Decayed olive — overgrown forgotten things */
+    --secondary: 80 15% 18%;
+    --secondary-foreground: 35 15% 72%;
 
-    /* Dark muted surface */
-    --muted: 160 8% 12%;
-    --muted-foreground: 200 10% 48%;
+    /* Deep warm surface */
+    --muted: 20 10% 10%;
+    --muted-foreground: 30 8% 42%;
 
-    /* Soft periwinkle / lavender — CRT glow from "Internet Used to Be a Place" */
-    --accent: 230 35% 55%;
-    --accent-foreground: 45 20% 90%;
+    /* Ghostly teal — haunted CRT afterglow */
+    --accent: 175 30% 40%;
+    --accent-foreground: 35 15% 90%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 50% 35%;
+    --destructive-foreground: 35 15% 90%;
 
-    --border: 160 10% 16%;
-    --input: 160 10% 16%;
-    --ring: 340 30% 60%;
+    --border: 20 8% 14%;
+    --input: 20 8% 14%;
+    --ring: 350 40% 45%;
 
-    --radius: 0.25rem;
+    --radius: 0.125rem;
 
     /* Custom tokens */
-    --grain-opacity: 0.05;
-    --glow-primary: 340 30% 60%;
-    --glow-crt: 230 35% 55%;
-    --text-dim: 160 8% 32%;
-    --scanline-color: 45 20% 82%;
-    --rose-mist: 340 20% 40%;
-    --crt-blue: 230 40% 65%;
-    --moss: 150 30% 28%;
-    --decay-cream: 40 25% 78%;
+    --grain-opacity: 0.07;
+    --glow-primary: 350 40% 45%;
+    --glow-crt: 175 35% 45%;
+    --text-dim: 20 6% 28%;
+    --scanline-color: 35 15% 72%;
+    --rose-mist: 350 25% 35%;
+    --crt-blue: 175 35% 50%;
+    --moss: 80 20% 25%;
+    --decay-cream: 35 20% 60%;
 
-    --sidebar-background: 160 10% 7%;
-    --sidebar-foreground: 45 20% 82%;
-    --sidebar-primary: 340 30% 60%;
-    --sidebar-primary-foreground: 160 12% 5%;
-    --sidebar-accent: 230 35% 55%;
-    --sidebar-accent-foreground: 45 20% 82%;
-    --sidebar-border: 160 10% 16%;
-    --sidebar-ring: 340 30% 60%;
+    --sidebar-background: 20 12% 6%;
+    --sidebar-foreground: 35 15% 72%;
+    --sidebar-primary: 350 40% 45%;
+    --sidebar-primary-foreground: 35 15% 90%;
+    --sidebar-accent: 175 30% 40%;
+    --sidebar-accent-foreground: 35 15% 72%;
+    --sidebar-border: 20 8% 14%;
+    --sidebar-ring: 350 40% 45%;
   }
 
   .dark {
-    --background: 160 12% 4%;
-    --foreground: 45 20% 82%;
-    --card: 160 10% 6%;
-    --card-foreground: 45 20% 82%;
-    --popover: 160 10% 5%;
-    --popover-foreground: 45 20% 82%;
-    --primary: 340 30% 60%;
-    --primary-foreground: 160 12% 5%;
-    --secondary: 150 25% 20%;
-    --secondary-foreground: 45 20% 82%;
-    --muted: 160 8% 10%;
-    --muted-foreground: 200 10% 45%;
-    --accent: 230 35% 52%;
-    --accent-foreground: 45 20% 90%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 160 10% 14%;
-    --input: 160 10% 14%;
-    --ring: 340 30% 60%;
+    --background: 20 15% 3%;
+    --foreground: 35 15% 72%;
+    --card: 20 12% 5%;
+    --card-foreground: 35 15% 72%;
+    --popover: 20 12% 4%;
+    --popover-foreground: 35 15% 72%;
+    --primary: 350 40% 45%;
+    --primary-foreground: 35 15% 90%;
+    --secondary: 80 15% 16%;
+    --secondary-foreground: 35 15% 72%;
+    --muted: 20 10% 8%;
+    --muted-foreground: 30 8% 38%;
+    --accent: 175 30% 38%;
+    --accent-foreground: 35 15% 90%;
+    --destructive: 0 50% 35%;
+    --destructive-foreground: 35 15% 90%;
+    --border: 20 8% 12%;
+    --input: 20 8% 12%;
+    --ring: 350 40% 45%;
   }
 }
 
