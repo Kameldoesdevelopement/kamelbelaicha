@@ -54,6 +54,10 @@ export default {
         },
         dim: "hsl(var(--text-dim))",
         glow: "hsl(var(--glow-primary))",
+        "crt-blue": "hsl(var(--crt-blue))",
+        moss: "hsl(var(--moss))",
+        "decay-cream": "hsl(var(--decay-cream))",
+        "rose-mist": "hsl(var(--rose-mist))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -91,12 +95,17 @@ export default {
           "96%": { opacity: "0.9" },
           "97%": { opacity: "1" },
         },
+        "crt-pulse": {
+          "0%, 100%": { opacity: "0.6" },
+          "50%": { opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in-up": "fadeInUp 0.6s ease-out forwards",
         "flicker": "flicker 4s infinite",
+        "crt-pulse": "crt-pulse 3s ease-in-out infinite",
       },
     },
   },

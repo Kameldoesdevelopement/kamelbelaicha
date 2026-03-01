@@ -59,7 +59,7 @@ const Projects = () => {
                       {project.tech.map((t) => (
                         <span
                           key={t}
-                          className="font-label text-[10px] text-dim tracking-[0.1em] uppercase border border-border px-2 py-0.5"
+                          className="font-label text-[10px] text-moss tracking-[0.1em] uppercase border border-secondary px-2 py-0.5"
                         >
                           {t}
                         </span>
@@ -67,7 +67,7 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 font-label text-xs text-primary tracking-[0.1em] uppercase opacity-60 group-hover:opacity-100 transition-opacity shrink-0">
+                  <div className="flex items-center gap-2 font-label text-xs text-crt-blue tracking-[0.1em] uppercase opacity-60 group-hover:opacity-100 transition-opacity shrink-0">
                     <span>visit</span>
                     <ExternalLink size={12} />
                   </div>
@@ -76,9 +76,9 @@ const Projects = () => {
             ))}
           </div>
 
-          {/* Empty state for future projects */}
-          <div className="mt-8 old-border p-12 bg-card flex flex-col items-center justify-center text-center">
-            <div className="font-label text-xs text-dim tracking-[0.2em] uppercase mb-2">
+          {/* Empty state */}
+          <div className="mt-8 botanical-border p-12 bg-card flex flex-col items-center justify-center text-center">
+            <div className="font-label text-xs text-moss tracking-[0.2em] uppercase mb-2">
               [ archive expanding ]
             </div>
             <p className="font-mono text-xs text-dim">

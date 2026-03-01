@@ -26,8 +26,8 @@ const Navigation = () => {
                 to={item.path}
                 className={`font-label text-xs tracking-[0.15em] uppercase px-3 py-1.5 transition-all duration-300 border ${
                   isActive
-                    ? "border-primary/40 bg-primary/10 text-primary"
-                    : "border-transparent text-muted-foreground hover:text-foreground hover:border-border"
+                    ? "border-primary/30 bg-primary/8 text-primary"
+                    : "border-transparent text-muted-foreground hover:text-decay-cream hover:border-border"
                 }`}
               >
                 {item.label}

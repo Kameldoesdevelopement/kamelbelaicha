@@ -14,7 +14,7 @@ const About = () => {
             {/* Left column - metadata */}
             <div className="space-y-8">
               <div>
-                <div className="font-label text-[10px] text-dim tracking-[0.2em] uppercase mb-2">
+                <div className="font-label text-[10px] text-moss tracking-[0.2em] uppercase mb-2">
                   name
                 </div>
                 <div className="font-mono text-sm text-foreground">
@@ -22,7 +22,7 @@ const About = () => {
                 </div>
               </div>
               <div>
-                <div className="font-label text-[10px] text-dim tracking-[0.2em] uppercase mb-2">
+                <div className="font-label text-[10px] text-moss tracking-[0.2em] uppercase mb-2">
                   role
                 </div>
                 <div className="font-mono text-sm text-foreground">
@@ -30,7 +30,7 @@ const About = () => {
                 </div>
               </div>
               <div>
-                <div className="font-label text-[10px] text-dim tracking-[0.2em] uppercase mb-2">
+                <div className="font-label text-[10px] text-moss tracking-[0.2em] uppercase mb-2">
                   focus
                 </div>
                 <div className="font-mono text-sm text-foreground">
@@ -42,7 +42,7 @@ const About = () => {
                 </div>
               </div>
               <div>
-                <div className="font-label text-[10px] text-dim tracking-[0.2em] uppercase mb-2">
+                <div className="font-label text-[10px] text-moss tracking-[0.2em] uppercase mb-2">
                   tools
                 </div>
                 <div className="font-mono text-sm text-foreground">
@@ -57,7 +57,7 @@ const About = () => {
 
             {/* Right column - bio */}
             <div className="md:col-span-2 space-y-6">
-              <div className="old-border p-8 bg-card scanlines">
+              <div className="crt-frame p-8 bg-card scanlines">
                 <p className="font-mono text-sm text-muted-foreground leading-loose">
                   I'm Kamel — a web developer who treats every project like an artifact worth preserving.
                   I build websites and web applications that feel intentional, layered, and alive.
@@ -73,8 +73,8 @@ const About = () => {
                 </p>
               </div>
 
-              {/* Timeline-ish */}
-              <div className="border-l border-border pl-6 space-y-6 ml-4">
+              {/* Timeline */}
+              <div className="border-l border-secondary pl-6 space-y-6 ml-4">
                 <div>
                   <div className="font-label text-[10px] text-primary tracking-[0.2em] uppercase mb-1">
                     present
@@ -84,7 +84,7 @@ const About = () => {
                   </div>
                 </div>
                 <div>
-                  <div className="font-label text-[10px] text-dim tracking-[0.2em] uppercase mb-1">
+                  <div className="font-label text-[10px] text-crt-blue tracking-[0.2em] uppercase mb-1">
                     ongoing
                   </div>
                   <div className="font-mono text-sm text-muted-foreground">
