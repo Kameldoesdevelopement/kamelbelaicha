@@ -29,9 +29,9 @@ const HeroSection = () => {
 
         {/* Main title */}
         <h1 className="font-display text-5xl md:text-7xl lg:text-[6.5rem] font-bold text-foreground leading-[0.85] mb-6 text-glow">
-          Kamel
+          <span className="text-corrupt">Kamel</span>
           <br />
-          <span className="text-primary italic">Belaicha</span>
+          <span className="text-primary italic glitch-hover" data-text="Belaicha">Belaicha</span>
         </h1>
 
         {/* Terminal line */}
@@ -44,8 +44,8 @@ const HeroSection = () => {
         </div>
 
         {/* Ghost elements */}
-        <div className="absolute top-16 right-8 w-40 h-40 border border-primary/10 opacity-15 rotate-12 hidden md:block" />
-        <div className="absolute top-24 right-14 w-28 h-28 border border-accent/10 opacity-10 -rotate-6 hidden md:block" />
+        <div className="absolute top-16 right-8 w-40 h-40 border border-primary/10 opacity-15 rotate-12 hidden md:block drift-slow" />
+        <div className="absolute top-24 right-14 w-28 h-28 border border-accent/10 opacity-10 -rotate-6 hidden md:block drift-medium" />
         <div className="absolute bottom-32 right-20 font-label text-[9px] text-dim tracking-[0.3em] uppercase rotate-90 hidden lg:block flicker">
           scroll ↓
         </div>
