@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import HeroSection from "../components/HeroSection";
 import { Link } from "react-router-dom";
-import crtGlow from "@/assets/crt-glow.jpg";
+import sparkstorePreview from "@/assets/sparkstore-preview.jpg";
 import botanicalArchive from "@/assets/botanical-archive.jpg";
 
 const Index = () => {
@@ -21,7 +21,7 @@ const Index = () => {
             >
               <div className="aspect-[16/10] overflow-hidden relative">
                 <img
-                  src={crtGlow}
+                  src={sparkstorePreview}
                   alt="SparkStore DZ project"
                   className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105 transition-transform"
                 />

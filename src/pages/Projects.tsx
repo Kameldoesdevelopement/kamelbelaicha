@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import { ExternalLink } from "lucide-react";
-import crtGlow from "@/assets/crt-glow.jpg";
+import sparkstorePreview from "@/assets/sparkstore-preview.jpg";
 
 const projects = [
   {
@@ -40,7 +40,7 @@ const Projects = () => {
                 {/* Project image */}
                 <div className="aspect-[21/9] overflow-hidden relative">
                   <img
-                    src={crtGlow}
+                    src={sparkstorePreview}
                     alt={`${project.title} preview`}
                     className="w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity duration-700 group-hover:scale-105 transition-transform"
                   />
