@@ -59,7 +59,7 @@ const Projects = () => {
                     <span className="tape-label text-[9px]">{project.status}</span>
                   </div>
 
-                  <h2 className="font-display text-3xl text-foreground mb-3 group-hover:text-primary transition-colors">
+                  <h2 className="font-display text-3xl text-foreground mb-3 group-hover:text-primary transition-colors text-corrupt">
                     {project.title}
                   </h2>
 
@@ -84,7 +84,7 @@ const Projects = () => {
 
           {/* Empty state */}
           <div className="mt-8 botanical-border p-12 bg-card flex flex-col items-center justify-center text-center">
-            <div className="font-label text-xs text-moss tracking-[0.2em] uppercase mb-2">
+            <div className="font-label text-xs text-moss tracking-[0.2em] uppercase mb-2 breathe">
               [ archive expanding ]
             </div>
             <p className="font-mono text-xs text-dim">

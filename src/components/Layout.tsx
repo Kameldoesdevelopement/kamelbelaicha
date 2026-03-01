@@ -1,10 +1,12 @@
 import { ReactNode } from "react";
 import Navigation from "./Navigation";
 import FloatingElements from "./FloatingElements";
+import CursorTrail from "./CursorTrail";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="grain-overlay min-h-screen relative">
+      <CursorTrail />
       <FloatingElements />
       <Navigation />
       <main className="pt-16 relative z-10">
@@ -15,7 +17,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           <span className="font-label text-xs text-dim tracking-[0.15em] uppercase">
             © 2026 Kamel Belaicha
           </span>
-          <span className="font-label text-xs text-rose-mist tracking-[0.15em]">
+          <span className="font-label text-xs text-rose-mist tracking-[0.15em] glitch-hover">
             [ archived ]
           </span>
         </div>

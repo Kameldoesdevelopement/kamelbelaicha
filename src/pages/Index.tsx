@@ -31,7 +31,7 @@ const Index = () => {
                 <div className="font-label text-[10px] text-dim tracking-[0.2em] uppercase mb-3">
                   001 — e-commerce
                 </div>
-                <h3 className="font-display text-2xl text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="font-display text-2xl text-foreground mb-2 group-hover:text-primary transition-colors text-corrupt">
                   SparkStore DZ
                 </h3>
                 <p className="font-mono text-xs text-muted-foreground leading-relaxed">
@@ -52,7 +52,7 @@ const Index = () => {
                 />
               </div>
               <div className="relative z-10 p-12 text-center">
-                <span className="font-label text-xs text-moss tracking-[0.2em] uppercase">
+                <span className="font-label text-xs text-moss tracking-[0.2em] uppercase breathe">
                   [ more specimens pending ]
                 </span>
                 <p className="font-mono text-[10px] text-dim mt-2">
