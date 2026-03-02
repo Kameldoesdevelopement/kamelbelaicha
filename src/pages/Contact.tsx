@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Github, Linkedin, Instagram } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -19,7 +19,7 @@ const Contact = () => {
             {/* Contact methods */}
             <div className="space-y-6">
               <a
-                href="mailto:kamel@example.com"
+                href="mailto:kamelbelaicha1312@outlook.com"
                 className="group flex items-center gap-4 old-border p-5 bg-card hover:bg-muted/50 transition-all duration-300"
               >
                 <Mail size={16} className="text-primary" />
@@ -28,13 +28,13 @@ const Contact = () => {
                     email
                   </div>
                   <div className="font-mono text-sm text-foreground group-hover:text-primary transition-colors">
-                    kamel@example.com
+                    kamelbelaicha1312@outlook.com
                   </div>
                 </div>
               </a>
 
               <a
-                href="https://github.com"
+                href="https://github.com/kamelbelaicha"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 old-border p-5 bg-card hover:bg-muted/50 transition-all duration-300"
@@ -51,7 +51,24 @@ const Contact = () => {
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://instagram.com/labmember137"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-4 old-border p-5 bg-card hover:bg-muted/50 transition-all duration-300"
+              >
+                <Instagram size={16} className="text-primary" />
+                <div>
+                  <div className="font-label text-[10px] text-moss tracking-[0.2em] uppercase mb-1">
+                    instagram
+                  </div>
+                  <div className="font-mono text-sm text-foreground group-hover:text-primary transition-colors">
+                    @labmember137
+                  </div>
+                </div>
+              </a>
+
+              <a
+                href="https://linkedin.com/in/kamelbelaicha"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 old-border p-5 bg-card hover:bg-muted/50 transition-all duration-300"
@@ -80,7 +97,7 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
-                  <span>response time: <span className="text-primary">~24h</span></span>
+                  <span>response time: <span className="text-primary">~2h</span></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-crt-blue animate-crt-pulse" />
@@ -89,7 +106,7 @@ const Contact = () => {
               </div>
               <div className="mt-8 pt-4 border-t border-secondary">
                 <p className="font-mono text-xs text-rose-mist italic">
-                  "this too shall rot — but not today."
+                  "the signal persists — even when the screen goes dark."
                 </p>
               </div>
             </div>
