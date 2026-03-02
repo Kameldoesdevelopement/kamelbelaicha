@@ -19,7 +19,7 @@ const Contact = () => {
             {/* Contact methods */}
             <div className="space-y-6">
               <a
-                href="mailto:kamelbelaicha1312@outlook.com"
+                href="mailto:belaichakamel1312@outlook.com"
                 className="group flex items-center gap-4 old-border p-5 bg-card hover:bg-muted/50 transition-all duration-300"
               >
                 <Mail size={16} className="text-primary" />
@@ -28,7 +28,7 @@ const Contact = () => {
                     email
                   </div>
                   <div className="font-mono text-sm text-foreground group-hover:text-primary transition-colors">
-                    kamelbelaicha1312@outlook.com
+                    belaichakamel1312@outlook.com
                   </div>
                 </div>
               </a>
