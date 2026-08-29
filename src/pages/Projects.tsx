@@ -56,21 +56,11 @@ const Projects = () => {
                 rel="noopener noreferrer"
                 className="group block old-border bg-card hover:bg-muted/50 transition-all duration-500 layered-card relative overflow-hidden"
               >
-                {/* Project image */}
-                <div className="aspect-[21/9] overflow-hidden relative">
-                  <img
-                    src={sparkstorePreview}
-                    alt={`${project.title} preview`}
-                    className="w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity duration-700 group-hover:scale-105 transition-transform"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
-                  <div className="absolute top-4 right-4 flex items-center gap-2 font-label text-xs text-crt-blue tracking-[0.1em] uppercase opacity-60 group-hover:opacity-100 transition-opacity">
+                <div className="p-8">
+                  <div className="flex items-center justify-end gap-2 font-label text-xs text-crt-blue tracking-[0.1em] uppercase opacity-60 group-hover:opacity-100 transition-opacity -mt-2 mb-2">
                     <span>visit</span>
                     <ExternalLink size={12} />
                   </div>
-                </div>
-
-                <div className="p-8">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="font-label text-[10px] text-dim tracking-[0.2em] uppercase">
                       {project.id} — {project.category}
