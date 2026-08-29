@@ -1,16 +1,35 @@
 import Layout from "../components/Layout";
 import { ExternalLink } from "lucide-react";
-import sparkstorePreview from "@/assets/sparkstore-preview.jpg";
 
 const projects = [
   {
     id: "001",
-    title: "SparkStore DZ",
+    title: "BookBerries",
     category: "e-commerce",
     description:
-      "A vintage notebook store built for lovers of analog. Curated stationery, beautiful typography, and an experience that feels like browsing a real shop.",
+      "An online bookstore experience — curated reads, warm design, and a browsing flow that feels like wandering the aisles of a real shop.",
     tech: ["React", "TypeScript", "Tailwind CSS"],
-    link: "https://sparkstoredz.lovable.app",
+    link: "https://bookberries.vercel.app/",
+    status: "live",
+  },
+  {
+    id: "002",
+    title: "Shakespeare Bookstore",
+    category: "e-commerce",
+    description:
+      "A bookstore steeped in literary tradition — classic catalog presentation with timeless character and old-world charm.",
+    tech: ["React", "TypeScript", "Tailwind CSS"],
+    link: "https://shakespearebookstore.com/",
+    status: "live",
+  },
+  {
+    id: "003",
+    title: "Ouedkniss",
+    category: "marketplace",
+    description:
+      "Algeria's largest classifieds marketplace — millions of listings, fast search, and a platform built for everyday commerce.",
+    tech: ["React", "TypeScript", "Tailwind CSS"],
+    link: "https://www.ouedkniss.com/",
     status: "live",
   },
 ];
