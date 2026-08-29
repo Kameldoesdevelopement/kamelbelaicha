@@ -1,34 +1,22 @@
-# Sarah's Digital Archive
+# Kamel Belaicha — Web Developer Portfolio
 
-i want to create a portfolio as webdeveloper and my name is kamel belaicha and on the projects section put a vintage notebook store its link is sparkstoredz.lovable.app and the core thing is watch sarah davis baker videos and work on matching her vibe multiple layers archived internet vibe just make sure to watch her videos Core Pages (MVP scope):
+A personal portfolio built with React, TypeScript, Vite, and Tailwind CSS.
 
-Home
+## Projects featured
 
-Projects
+- [BookBerries](https://bookberries.vercel.app/)
+- [Shakespeare Bookstore](https://shakespearebookstore.com/)
+- [Ouedkniss](https://www.ouedkniss.com/)
 
-About
-
-Contact
-
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://kamelbelaicha.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/634a98cc-1696-44fc-9b36-5bbc3d8ac986).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Getting started
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
+```
+
+## Build
+
+```sh
+npm run build
 ```
