@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import HeroSection from "../components/HeroSection";
 import { Link } from "react-router-dom";
-import sparkstorePreview from "@/assets/sparkstore-preview.jpg";
+import crtGlow from "@/assets/crt-glow.jpg";
 import botanicalArchive from "@/assets/botanical-archive.jpg";
 
 const Index = () => {
@@ -21,8 +21,8 @@ const Index = () => {
             >
               <div className="aspect-[16/10] overflow-hidden relative">
                 <img
-                  src={sparkstorePreview}
-                  alt="SparkStore DZ project"
+                  src={crtGlow}
+                  alt="BookBerries project"
                   className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105 transition-transform"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
@@ -32,10 +32,10 @@ const Index = () => {
                   001 — e-commerce
                 </div>
                 <h3 className="font-display text-2xl text-foreground mb-2 group-hover:text-primary transition-colors text-corrupt">
-                  SparkStore DZ
+                  BookBerries
                 </h3>
                 <p className="font-mono text-xs text-muted-foreground leading-relaxed">
-                  A vintage notebook store. Curated stationery for those who still believe in putting pen to paper.
+                  An online bookstore experience — curated reads and a browsing flow like wandering real aisles.
                 </p>
                 <div className="mt-4 font-label text-[10px] text-primary tracking-[0.15em] uppercase opacity-0 group-hover:opacity-100 transition-opacity">
                   → view project
