@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import heroDecay from "@/assets/hero-decay.jpg";
 
 const HeroSection = () => {
@@ -23,9 +24,16 @@ const HeroSection = () => {
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
         {/* Tape label */}
-        <div className="tape-label inline-block mb-8">
-          web developer / digital archaeologist
-        </div>
+        <Link
+          to="/about"
+          aria-label="About Kamel Belaicha"
+          className="tape-label group inline-flex items-center gap-0 mb-8 transition-all duration-300 hover:border-primary/70 hover:shadow-[0_0_16px_hsl(var(--glow-primary)/0.18)] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+        >
+          <span>web developer / digital archaeologist</span>
+          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 transition-all duration-300 group-hover:ml-2 group-hover:max-w-16 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:max-w-16 group-focus-visible:opacity-100">
+            → about
+          </span>
+        </Link>
 
         {/* Main title */}
         <h1 className="font-display text-5xl md:text-7xl lg:text-[6.5rem] font-bold text-foreground leading-[0.85] mb-6 text-glow">
