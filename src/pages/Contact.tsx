@@ -11,8 +11,8 @@ const Contact = () => {
             Contact
           </h1>
           <p className="font-mono text-sm text-muted-foreground mb-16 max-w-lg">
-            Want to work together, or just say hello? Every message gets read.
-            This inbox is monitored by a real human.
+            I'm open to professional opportunities, project collaborations, and conversations about web development.
+            If you would like to discuss working together, please feel free to get in touch.
           </p>
 
           <div className="grid md:grid-cols-2 gap-12">
@@ -88,12 +88,12 @@ const Contact = () => {
             {/* CRT-style status panel */}
             <div className="crt-frame p-8 bg-card scanlines">
               <div className="font-label text-[10px] text-crt-blue tracking-[0.2em] uppercase mb-4 text-glow-crt">
-                transmission status
+                availability
               </div>
               <div className="font-mono text-sm text-muted-foreground space-y-2">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-moss animate-pulse" />
-                  <span>inbox: <span className="text-moss">online</span></span>
+                  <span>inbox: <span className="text-moss">open</span></span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-primary" />
@@ -103,11 +103,6 @@ const Contact = () => {
                   <span className="w-2 h-2 rounded-full bg-crt-blue animate-crt-pulse" />
                   <span>timezone: <span className="text-crt-blue">UTC+1</span></span>
                 </div>
-              </div>
-              <div className="mt-8 pt-4 border-t border-secondary">
-                <p className="font-mono text-xs text-rose-mist italic">
-                  "the signal persists — even when the screen goes dark."
-                </p>
               </div>
             </div>
           </div>

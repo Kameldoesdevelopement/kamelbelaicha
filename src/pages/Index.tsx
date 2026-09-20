@@ -2,7 +2,8 @@ import Layout from "../components/Layout";
 import HeroSection from "../components/HeroSection";
 import { Link } from "react-router-dom";
 import crtGlow from "@/assets/crt-glow.jpg";
-import bookberriesBooks from "@/assets/bookberries-books.jpg";
+import botanicalArchive from "@/assets/botanical-archive.jpg";
+import bookberriesBooks from "@/assets/bookberries-books.jpg.asset.json";
 
 const Index = () => {
   return (
@@ -21,8 +22,8 @@ const Index = () => {
             >
               <div className="aspect-[16/10] overflow-hidden relative">
                 <img
-                  src={bookberriesBooks}
-                  alt="Weathered books in a haunted library archive"
+                  src={bookberriesBooks.url}
+                  alt="A stack of vintage books on a wooden shelf"
                   loading="lazy"
                   width={1408}
                   height={880}
@@ -52,8 +53,8 @@ const Index = () => {
             >
               <div className="absolute inset-0">
                 <img
-                  src={crtGlow}
-                  alt=""
+                  src={botanicalArchive}
+                  alt="Archived botanical specimens"
                   loading="lazy"
                   width={1024}
                   height={1024}

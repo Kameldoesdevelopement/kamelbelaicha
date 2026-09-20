@@ -28,18 +28,18 @@ const About = () => {
               </div>
               <div>
                 <div className="font-label text-[10px] text-moss tracking-[0.2em] uppercase mb-2">role</div>
-                <div className="font-mono text-sm text-foreground">Web Developer</div>
+                <div className="font-mono text-sm text-foreground">Full-Stack Web Developer</div>
               </div>
               <div>
                 <div className="font-label text-[10px] text-moss tracking-[0.2em] uppercase mb-2">focus</div>
                 <div className="font-mono text-sm text-foreground">
-                  Frontend Development<br />UI/UX Design<br />E-Commerce
+                  Full-Stack Development<br />Responsive Interfaces<br />APIs & Databases
                 </div>
               </div>
               <div>
                 <div className="font-label text-[10px] text-moss tracking-[0.2em] uppercase mb-2">tools</div>
                 <div className="font-mono text-sm text-foreground">
-                  React · TypeScript<br />Tailwind CSS · Node.js<br />Figma · Git
+                  React · TypeScript<br />Node.js · PostgreSQL<br />Tailwind CSS · Git
                 </div>
               </div>
             </div>
@@ -48,17 +48,18 @@ const About = () => {
             <div className="md:col-span-2 space-y-6">
               <div className="crt-frame p-8 bg-card scanlines">
                 <p className="font-mono text-sm text-muted-foreground leading-loose">
-                  I'm Kamel — a web developer who treats every project like an artifact worth preserving.
-                  I build websites and web applications that feel intentional, layered, and alive.
+                  I'm Kamel, a passionate full-stack web developer. I first became interested in
+                  development because I wanted to understand how the websites I used every day were built.
                 </p>
                 <p className="font-mono text-sm text-muted-foreground leading-loose mt-4">
-                  I believe the best digital work carries weight — it has texture, it has depth,
-                  it remembers where it came from. The internet used to be a <span className="text-primary italic">place</span>.
-                  I'm trying to keep building it that way.
+                  I earned my bachelor's degree from Université Mouloud Mammeri de Tizi-Ouzou,
+                  and continued learning through technical books, online courses, and hands-on projects.
+                  That mix of formal study and independent practice has shaped the way I solve problems.
                 </p>
                 <p className="font-mono text-sm text-muted-foreground leading-loose mt-4">
-                  When I'm not coding, I'm probably deep in a rabbit hole — researching forgotten web pages,
-                  bookmarking things that might disappear, or thinking about how design shapes memory.
+                  Today, I enjoy working across the full stack, from thoughtful interfaces to the systems
+                  behind them. I care about writing clear code, learning from each project, and creating
+                  digital experiences that are useful, reliable, and enjoyable to use.
                 </p>
               </div>
 
@@ -66,11 +67,11 @@ const About = () => {
               <div className="border-l border-primary/20 pl-6 space-y-6 ml-4">
                 <div>
                   <div className="font-label text-[10px] text-primary tracking-[0.2em] uppercase mb-1">present</div>
-                  <div className="font-mono text-sm text-foreground">Building for the web, one archive at a time</div>
+                  <div className="font-mono text-sm text-foreground">Building practical, thoughtful web applications</div>
                 </div>
                 <div>
-                  <div className="font-label text-[10px] text-crt-blue tracking-[0.2em] uppercase mb-1">ongoing</div>
-                  <div className="font-mono text-sm text-muted-foreground">Learning, iterating, shipping</div>
+                  <div className="font-label text-[10px] text-crt-blue tracking-[0.2em] uppercase mb-1">education</div>
+                  <div className="font-mono text-sm text-muted-foreground">Bachelor's degree · Université Mouloud Mammeri de Tizi-Ouzou</div>
                 </div>
               </div>
             </div>
