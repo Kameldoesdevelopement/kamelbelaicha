@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import HeroSection from "../components/HeroSection";
 import { Link } from "react-router-dom";
 import crtGlow from "@/assets/crt-glow.jpg";
-import botanicalArchive from "@/assets/botanical-archive.jpg";
+import bookberriesBooks from "@/assets/bookberries-books.jpg";
 
 const Index = () => {
   return (
@@ -21,8 +21,11 @@ const Index = () => {
             >
               <div className="aspect-[16/10] overflow-hidden relative">
                 <img
-                  src={crtGlow}
-                  alt="BookBerries project"
+                  src={bookberriesBooks}
+                  alt="Weathered books in a haunted library archive"
+                  loading="lazy"
+                  width={1408}
+                  height={880}
                   className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105 transition-transform"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
@@ -43,34 +46,50 @@ const Index = () => {
               </div>
             </Link>
 
-            <div className="botanical-border bg-card flex flex-col items-center justify-center overflow-hidden relative">
+            <Link
+              to="/projects"
+              className="group botanical-border bg-card flex flex-col items-center justify-center overflow-hidden relative min-h-72 transition-colors duration-500 hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            >
               <div className="absolute inset-0">
                 <img
-                  src={botanicalArchive}
+                  src={crtGlow}
                   alt=""
-                  className="w-full h-full object-cover opacity-15"
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                  className="w-full h-full object-cover opacity-10 transition-all duration-700 group-hover:opacity-20 group-hover:scale-105"
                 />
               </div>
               <div className="relative z-10 p-12 text-center">
-                <span className="font-label text-xs text-moss tracking-[0.2em] uppercase breathe">
-                  [ more specimens pending ]
+                <span className="font-label text-xs text-moss tracking-[0.2em] uppercase breathe group-hover:text-crt-blue transition-colors">
+                  [ more projects ]
                 </span>
-                <p className="font-mono text-[10px] text-dim mt-2">
-                  the archive grows slowly
+                <p className="font-mono text-[10px] text-dim mt-2 group-hover:text-muted-foreground transition-colors">
+                  enter the project archive →
                 </p>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Brief about */}
       <section className="px-6 py-24 border-t border-border relative">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
-          <div>
-            <div className="tape-label-blue inline-block mb-4">about</div>
-          </div>
+        <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-12 items-center">
           <div className="md:col-span-2">
+            <div className="tape-label-blue inline-block mb-4">about</div>
+            <Link to="/about" className="group block crt-frame overflow-hidden scanlines">
+              <img
+                src={crtGlow}
+                alt="An old computer displaying glowing code"
+                loading="lazy"
+                width={1024}
+                height={1024}
+                className="w-full aspect-[4/3] object-cover opacity-60 transition-all duration-700 group-hover:opacity-80 group-hover:scale-105"
+              />
+            </Link>
+          </div>
+          <div className="md:col-span-3">
             <p className="font-mono text-sm text-muted-foreground leading-loose">
               I'm a web developer who builds digital experiences with care and intention.
               Every project is an archive — a snapshot of craft, code, and curiosity.
