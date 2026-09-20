@@ -1,7 +1,7 @@
 # Authentic imagery and portfolio copy update
 
 ## Changes
-- Replace the generated Home background and BookBerries cover with free-to-use, real photography sourced from Unsplash, downloaded into the project rather than hotlinked.
+- Keep the full Home background unchanged and replace only the generated BookBerries cover with free-to-use, real photography sourced from Unsplash, downloaded into the project rather than hotlinked.
 - Keep the current coding image in the Home About section unchanged.
 - Keep the floral archive image on the About page and reuse it as the background of the Home “More projects” panel.
 - Update the About role to “Full-Stack Web Developer,” then revise the focus and tools to cover both front-end and back-end work without inventing experience.
