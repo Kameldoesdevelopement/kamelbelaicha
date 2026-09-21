@@ -3,7 +3,7 @@ import HeroSection from "../components/HeroSection";
 import { Link } from "react-router-dom";
 import crtGlow from "@/assets/crt-glow.jpg";
 import botanicalArchive from "@/assets/botanical-archive.jpg";
-import bookberriesBooks from "@/assets/bookberries-books.jpg.asset.json";
+import bookberriesBooks from "@/assets/bookberries-books.jpg";
 
 const Index = () => {
   return (
@@ -22,7 +22,7 @@ const Index = () => {
             >
               <div className="aspect-[16/10] overflow-hidden relative">
                 <img
-                  src={bookberriesBooks.url}
+                  src={bookberriesBooks}
                   alt="A stack of vintage books on a wooden shelf"
                   loading="lazy"
                   width={1408}
