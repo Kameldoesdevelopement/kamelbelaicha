@@ -14,12 +14,12 @@ const projects = [
   },
   {
     id: "002",
-    title: "Shakespeare Bookstore",
-    category: "e-commerce",
+    title: "UMMTO Share",
+    category: "student platform",
     description:
-      "A bookstore steeped in literary tradition — classic catalog presentation with timeless character and old-world charm.",
+      "A sharing platform created for the UMMTO community, bringing useful student resources together in one accessible place.",
     tech: ["React", "TypeScript", "Tailwind CSS"],
-    link: "https://shakespearebookstore.com/",
+    link: "https://ummtoshare.vercel.app/",
     status: "live",
   },
   {
@@ -30,6 +30,16 @@ const projects = [
       "Algeria's largest classifieds marketplace — millions of listings, fast search, and a platform built for everyday commerce.",
     tech: ["React", "TypeScript", "Tailwind CSS"],
     link: "https://www.ouedkniss.com/",
+    status: "live",
+  },
+  {
+    id: "004",
+    title: "Tiny Explorer",
+    category: "educational game",
+    description:
+      "A playful learning experience for toddlers, designed around simple interactions, discovery, and age-appropriate activities.",
+    tech: ["React", "TypeScript", "Tailwind CSS"],
+    link: "https://toddlersgame.vercel.app/",
     status: "live",
   },
 ];
