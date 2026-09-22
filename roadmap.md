@@ -10,3 +10,5 @@
 - [x] Replace Shakespeare Bookstore with UMMTO Share in Projects.
 - [x] Add Tiny Explorer to Projects.
 - [x] Keep all new visuals free of AI-generated imagery.
+- [ ] Add an original procedural 3D digital-reliquary environment to Home only.
+- [ ] Verify the 3D Home experience on desktop and mobile.
