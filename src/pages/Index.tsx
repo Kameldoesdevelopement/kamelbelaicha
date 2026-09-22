@@ -7,7 +7,7 @@ import bookberriesBooks from "@/assets/bookberries-books.jpg";
 
 const Index = () => {
   return (
-    <Layout>
+    <Layout showFloatingElements={false}>
       <HeroSection />
 
       {/* Featured section */}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import heroDecay from "@/assets/hero-decay.jpg";
+import ArchiveScene from "./ArchiveScene";
 
 const HeroSection = () => {
   const [showCursor, setShowCursor] = useState(true);
@@ -11,7 +12,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col justify-center px-6 relative scanlines overflow-hidden">
+    <section className="min-h-[calc(100svh-7rem)] flex flex-col justify-center px-6 relative scanlines overflow-hidden">
       {/* Background decay image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -21,13 +22,14 @@ const HeroSection = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
       </div>
+      <ArchiveScene />
 
-      <div className="max-w-6xl mx-auto w-full relative z-10">
+      <div className="max-w-6xl mx-auto w-full relative z-10 pointer-events-none">
         {/* Tape label */}
         <Link
           to="/about"
           aria-label="About Kamel Belaicha"
-          className="tape-label group inline-flex items-center gap-0 mb-8 transition-all duration-300 hover:border-primary/70 hover:shadow-[0_0_16px_hsl(var(--glow-primary)/0.18)] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+          className="tape-label group inline-flex items-center gap-0 mb-8 transition-all duration-300 hover:border-primary/70 hover:shadow-[0_0_16px_hsl(var(--glow-primary)/0.18)] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring pointer-events-auto"
         >
           <span>web developer / digital archaeologist</span>
           <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 transition-all duration-300 group-hover:ml-2 group-hover:max-w-16 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:max-w-16 group-focus-visible:opacity-100">
