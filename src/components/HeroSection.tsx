@@ -12,7 +12,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col justify-center px-6 relative scanlines overflow-hidden">
+    <section className="min-h-[calc(100svh-7rem)] flex flex-col justify-center px-6 relative scanlines overflow-hidden">
       {/* Background decay image */}
       <div className="absolute inset-0 z-0">
         <img
