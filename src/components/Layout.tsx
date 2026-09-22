@@ -3,11 +3,11 @@ import Navigation from "./Navigation";
 import FloatingElements from "./FloatingElements";
 import CursorTrail from "./CursorTrail";
 
-const Layout = ({ children, showFloatingElements = true }: { children: ReactNode; showFloatingElements?: boolean }) => {
+const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="grain-overlay min-h-screen relative">
       <CursorTrail />
-      {showFloatingElements && <FloatingElements />}
+      <FloatingElements />
       <Navigation />
       <main className="pt-16 relative z-10">
         {children}
