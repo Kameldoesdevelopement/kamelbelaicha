@@ -10,3 +10,6 @@
 - [x] Replace Shakespeare Bookstore with UMMTO Share in Projects.
 - [x] Add Tiny Explorer to Projects.
 - [x] Keep all new visuals free of AI-generated imagery.
+- [x] Add cursor-tracked 3D tilt and glare to every project card.
+- [x] Add layered archival card depth and four distinct interface previews.
+- [x] Verify desktop interaction, mobile fallback, reduced motion, and project links.
