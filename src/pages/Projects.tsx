@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
-import { ExternalLink } from "lucide-react";
+import ProjectTiltCard, { type Project } from "../components/ProjectTiltCard";
 
-const projects = [
+const projects: Project[] = [
   {
     id: "001",
     title: "BookBerries",
@@ -11,6 +11,7 @@ const projects = [
     tech: ["React", "TypeScript", "Tailwind CSS"],
     link: "https://bookberries.vercel.app/",
     status: "live",
+    preview: "books",
   },
   {
     id: "002",
@@ -21,6 +22,7 @@ const projects = [
     tech: ["React", "TypeScript", "Tailwind CSS"],
     link: "https://ummtoshare.vercel.app/",
     status: "live",
+    preview: "resources",
   },
   {
     id: "003",
@@ -31,6 +33,7 @@ const projects = [
     tech: ["React", "TypeScript", "Tailwind CSS"],
     link: "https://www.ouedkniss.com/",
     status: "live",
+    preview: "marketplace",
   },
   {
     id: "004",
@@ -41,6 +44,7 @@ const projects = [
     tech: ["React", "TypeScript", "Tailwind CSS"],
     link: "https://toddlersgame.vercel.app/",
     status: "live",
+    preview: "learning",
   },
 ];
 
@@ -59,45 +63,7 @@ const Projects = () => {
 
           <div className="space-y-8">
             {projects.map((project) => (
-              <a
-                key={project.id}
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block old-border bg-card hover:bg-muted/50 transition-all duration-500 layered-card relative overflow-hidden"
-              >
-                <div className="p-8">
-                  <div className="flex items-center justify-end gap-2 font-label text-xs text-crt-blue tracking-[0.1em] uppercase opacity-60 group-hover:opacity-100 transition-opacity -mt-2 mb-2">
-                    <span>visit</span>
-                    <ExternalLink size={12} />
-                  </div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="font-label text-[10px] text-dim tracking-[0.2em] uppercase">
-                      {project.id} — {project.category}
-                    </span>
-                    <span className="tape-label text-[9px]">{project.status}</span>
-                  </div>
-
-                  <h2 className="font-display text-3xl text-foreground mb-3 group-hover:text-primary transition-colors text-corrupt">
-                    {project.title}
-                  </h2>
-
-                  <p className="font-mono text-sm text-muted-foreground leading-relaxed max-w-lg">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {project.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="font-label text-[10px] text-moss tracking-[0.1em] uppercase border border-secondary px-2 py-0.5"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </a>
+              <ProjectTiltCard key={project.id} project={project} />
             ))}
           </div>
 
