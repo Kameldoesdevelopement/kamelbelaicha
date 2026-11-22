@@ -23,10 +23,10 @@ const Index = () => {
               <div className="aspect-[16/10] overflow-hidden relative">
                 <img
                   src={bookberriesBooks}
-                  alt="A stack of vintage books on a wooden shelf"
+                  alt="Library shelves filled with old books"
                   loading="lazy"
-                  width={1408}
-                  height={880}
+                  width={1400}
+                  height={821}
                   className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105 transition-transform"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />

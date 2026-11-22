@@ -26,17 +26,6 @@ const projects: Project[] = [
   },
   {
     id: "003",
-    title: "Ouedkniss",
-    category: "marketplace",
-    description:
-      "Algeria's largest classifieds marketplace — millions of listings, fast search, and a platform built for everyday commerce.",
-    tech: ["React", "TypeScript", "Tailwind CSS"],
-    link: "https://www.ouedkniss.com/",
-    status: "live",
-    preview: "marketplace",
-  },
-  {
-    id: "004",
     title: "Tiny Explorer",
     category: "educational game",
     description:

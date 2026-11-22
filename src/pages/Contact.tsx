@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import { Mail, Github, Linkedin, Instagram } from "lucide-react";
+import { Mail, Github, Phone, Instagram } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -68,18 +68,16 @@ const Contact = () => {
               </a>
 
               <a
-                href="https://linkedin.com/in/kamelbelaicha"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="tel:+213776722140"
                 className="group flex items-center gap-4 old-border p-5 bg-card hover:bg-muted/50 transition-all duration-300"
               >
-                <Linkedin size={16} className="text-accent" />
+                <Phone size={16} className="text-accent" />
                 <div>
                   <div className="font-label text-[10px] text-moss tracking-[0.2em] uppercase mb-1">
-                    linkedin
+                    phone
                   </div>
                   <div className="font-mono text-sm text-foreground group-hover:text-accent transition-colors">
-                    linkedin.com/in/kamelbelaicha
+                    0776 72 21 40
                   </div>
                 </div>
               </a>

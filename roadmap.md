@@ -13,3 +13,4 @@
 - [x] Add cursor-tracked 3D tilt and glare to every project card.
 - [x] Add layered archival card depth and four distinct interface previews.
 - [x] Verify desktop interaction, mobile fallback, reduced motion, and project links.
+- [x] Coding-themed background with small 3D objects; remove Ouedkniss; portrait on About; new real BookBerries photo; phone instead of LinkedIn.

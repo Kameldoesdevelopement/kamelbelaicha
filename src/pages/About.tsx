@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import botanicalArchive from "@/assets/botanical-archive.jpg";
+import portrait from "@/assets/kamel-portrait.jpg";
 
 const About = () => {
   return (
@@ -14,12 +14,13 @@ const About = () => {
           <div className="grid md:grid-cols-3 gap-12 mt-12">
             {/* Left column - metadata + image */}
             <div className="space-y-8">
-              <div className="botanical-border overflow-hidden">
+              <div className="botanical-border overflow-hidden relative scanlines">
                 <img
-                  src={botanicalArchive}
-                  alt="Botanical archive specimens"
-                  className="w-full aspect-square object-cover opacity-60"
+                  src={portrait}
+                  alt="Portrait of Kamel Belaicha"
+                  className="w-full aspect-square object-cover object-top opacity-50 grayscale sepia-[0.35] contrast-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-primary/10 to-transparent mix-blend-multiply pointer-events-none" />
               </div>
 
               <div>
