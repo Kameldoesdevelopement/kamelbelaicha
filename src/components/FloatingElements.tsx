@@ -27,27 +27,27 @@ const FloatingElements = () => {
   }, []);
 
   const glyphs = [
-    { t: "</>", top: "12%", left: "8%", d: 1.5, c: "text-primary/20", dur: "9s" },
-    { t: "{ }", top: "30%", left: "82%", d: 2.2, c: "text-crt-blue/20", dur: "11s" },
-    { t: "=>", top: "68%", left: "14%", d: 1.2, c: "text-moss/25", dur: "13s" },
-    { t: "01", top: "52%", left: "56%", d: 2.8, c: "text-accent/15", dur: "10s" },
-    { t: "fn()", top: "82%", left: "74%", d: 1.8, c: "text-primary/15", dur: "12s" },
-    { t: "#", top: "20%", left: "45%", d: 0.9, c: "text-crt-blue/15", dur: "14s" },
-    { t: "[ ]", top: "88%", left: "38%", d: 2.4, c: "text-moss/20", dur: "9s" },
+    { t: "</>", top: "12%", left: "8%", d: 1.5, c: "text-primary/20", dur: "16s" },
+    { t: "{ }", top: "30%", left: "82%", d: 2.2, c: "text-crt-blue/20", dur: "19s" },
+    { t: "=>", top: "68%", left: "14%", d: 1.2, c: "text-moss/25", dur: "22s" },
+    { t: "01", top: "52%", left: "56%", d: 2.8, c: "text-accent/15", dur: "18s" },
+    { t: "fn()", top: "82%", left: "74%", d: 1.8, c: "text-primary/15", dur: "21s" },
+    { t: "&&", top: "20%", left: "45%", d: 0.9, c: "text-crt-blue/15", dur: "24s" },
+    { t: "null", top: "88%", left: "38%", d: 2.4, c: "text-moss/20", dur: "17s" },
   ];
   const cubes = [
-    { top: "24%", left: "24%", s: 28, d: 1.6, dur: "22s" },
-    { top: "60%", left: "86%", s: 36, d: 2.4, dur: "30s" },
-    { top: "76%", left: "50%", s: 20, d: 3, dur: "18s" },
-    { top: "8%", left: "68%", s: 24, d: 1.1, dur: "26s" },
+    { top: "24%", left: "24%", s: 28, d: 1.6, dur: "34s" },
+    { top: "60%", left: "86%", s: 36, d: 2.4, dur: "44s" },
+    { top: "76%", left: "50%", s: 20, d: 3, dur: "30s" },
+    { top: "8%", left: "68%", s: 24, d: 1.1, dur: "38s" },
   ];
 
   return (
     <div ref={containerRef} className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {glyphs.map((g, i) => (
-        <div key={g.t + i} data-depth={g.d} className="absolute transition-transform duration-700" style={{ top: g.top, left: g.left }}>
+        <div key={g.t + i} data-depth={g.d} className="absolute transition-transform duration-1000 ease-out" style={{ top: g.top, left: g.left }}>
           <span
-            className={`block font-mono text-lg md:text-2xl ${g.c} animate-[floatDrift_10s_ease-in-out_infinite]`}
+            className={`block font-mono text-lg md:text-2xl ${g.c} animate-[floatDrift_16s_ease-in-out_infinite]`}
             style={{ animationDuration: g.dur, textShadow: "0 0 12px hsl(var(--glow-crt) / 0.25)" }}
           >
             {g.t}
@@ -59,7 +59,7 @@ const FloatingElements = () => {
         <div
           key={i}
           data-depth={c.d}
-          className="absolute transition-transform duration-700 hidden sm:block"
+          className="absolute transition-transform duration-1000 ease-out hidden sm:block"
           style={{ top: c.top, left: c.left, perspective: "400px" }}
         >
           <div className="code-cube" style={{ width: c.s, height: c.s, animationDuration: c.dur }}>

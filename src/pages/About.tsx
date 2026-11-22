@@ -18,7 +18,7 @@ const About = () => {
                 <img
                   src={portrait}
                   alt="Portrait of Kamel Belaicha"
-                  className="w-full aspect-square object-cover object-top opacity-50 grayscale sepia-[0.35] contrast-110"
+                  className="w-full aspect-[4/5] object-cover object-top opacity-50 grayscale sepia-[0.35] contrast-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-primary/10 to-transparent mix-blend-multiply pointer-events-none" />
               </div>

@@ -540,8 +540,10 @@
 }
 
 @keyframes floatDrift {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+  0%, 100% { transform: translate(0px, 0px); }
+  25% { transform: translate(3px, -6px); }
+  50% { transform: translate(-2px, -10px); }
+  75% { transform: translate(2px, -4px); }
 }
 
 @keyframes driftSlow {
@@ -611,6 +613,6 @@
 }
 
 @keyframes cubeSpin { from { transform: rotateX(0deg) rotateY(0deg); } to { transform: rotateX(360deg) rotateY(360deg); } }
-.code-cube { position: relative; transform-style: preserve-3d; animation: cubeSpin 24s linear infinite; }
+.code-cube { position: relative; transform-style: preserve-3d; animation: cubeSpin 40s linear infinite; }
 .code-cube > span { position: absolute; inset: 0; border: 1px solid hsl(var(--glow-crt) / 0.25); background: hsl(var(--glow-crt) / 0.03); }
 @media (prefers-reduced-motion: reduce) { .code-cube { animation: none; } }
