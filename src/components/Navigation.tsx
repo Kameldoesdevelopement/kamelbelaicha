@@ -1,14 +1,16 @@
+import { useLang } from "@/lib/i18n";
 import { Link, useLocation } from "react-router-dom";
 
-const navItems = [
-  { path: "/", label: "Home" },
-  { path: "/projects", label: "Projects" },
-  { path: "/about", label: "About" },
-  { path: "/contact", label: "Contact" },
+const navItems: { path: string; label: "nav.home" | "nav.projects" | "nav.about" | "nav.contact" }[] = [
+  { path: "/", label: "nav.home" },
+  { path: "/projects", label: "nav.projects" },
+  { path: "/about", label: "nav.about" },
+  { path: "/contact", label: "nav.contact" },
 ];
 
 const Navigation = () => {
   const location = useLocation();
+  const { t, lang, setLang } = useLang();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[hsl(20,18%,8%)] backdrop-blur-sm border-b border-border">
@@ -30,7 +32,7 @@ const Navigation = () => {
                     : "text-muted-foreground hover:text-decay-cream"
                 }`}
               >
-                {item.label}
+                {t(item.label)}
                 {/* Underline */}
                 <span
                   className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-px transition-all duration-300 ${
@@ -42,6 +44,17 @@ const Navigation = () => {
               </Link>
             );
           })}
+          <button
+            type="button"
+            onClick={() => setLang(lang === "en" ? "fr" : "en")}
+            aria-label={t("nav.switch")}
+            title={t("nav.switch")}
+            className="ml-2 font-label text-[10px] tracking-[0.15em] uppercase border border-border px-2 py-1 text-muted-foreground hover:text-primary hover:border-primary/60 hover:shadow-[0_0_8px_hsl(var(--glow-primary)/0.35)] transition-all duration-300"
+          >
+            <span className={lang === "en" ? "text-primary" : ""}>EN</span>
+            <span className="mx-1 text-dim">/</span>
+            <span className={lang === "fr" ? "text-primary" : ""}>FR</span>
+          </button>
         </div>
       </div>
     </nav>

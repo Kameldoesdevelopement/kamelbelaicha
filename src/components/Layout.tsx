@@ -1,9 +1,11 @@
+import { useLang } from "@/lib/i18n";
 import { ReactNode } from "react";
 import Navigation from "./Navigation";
 import FloatingElements from "./FloatingElements";
 import CursorTrail from "./CursorTrail";
 
 const Layout = ({ children }: { children: ReactNode }) => {
+  const { t } = useLang();
   return (
     <div className="grain-overlay min-h-screen relative">
       <CursorTrail />
@@ -18,7 +20,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
             © 2026 Kamel Belaicha
           </span>
           <span className="font-label text-xs text-rose-mist tracking-[0.15em] glitch-hover">
-            [ archived ]
+            {t("footer.archived")}
           </span>
         </div>
       </footer>
