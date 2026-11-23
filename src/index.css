@@ -612,7 +612,3 @@
   50% { box-shadow: 0 0 25px hsl(var(--crt-blue) / 0.15); }
 }
 
-@keyframes cubeSpin { from { transform: rotateX(0deg) rotateY(0deg); } to { transform: rotateX(360deg) rotateY(360deg); } }
-.code-cube { position: relative; transform-style: preserve-3d; animation: cubeSpin 40s linear infinite; }
-.code-cube > span { position: absolute; inset: 0; border: 1px solid hsl(var(--glow-crt) / 0.25); background: hsl(var(--glow-crt) / 0.03); }
-@media (prefers-reduced-motion: reduce) { .code-cube { animation: none; } }

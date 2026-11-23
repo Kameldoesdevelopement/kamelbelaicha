@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import HeroSection from "../components/HeroSection";
 import { Link } from "react-router-dom";
-import crtGlow from "@/assets/crt-glow.jpg";
+import retroComputer from "@/assets/retro-computer.jpg";
 import botanicalArchive from "@/assets/botanical-archive.jpg";
 import bookberriesBooks from "@/assets/bookberries-books.jpg";
 
@@ -81,8 +81,8 @@ const Index = () => {
             <div className="tape-label-blue inline-block mb-4">about</div>
             <Link to="/about" className="group block crt-frame overflow-hidden scanlines">
               <img
-                src={crtGlow}
-                alt="An old computer displaying glowing code"
+                src={retroComputer}
+                alt="A vintage computer and retro technology"
                 loading="lazy"
                 width={1024}
                 height={1024}

@@ -35,13 +35,6 @@ const FloatingElements = () => {
     { t: "&&", top: "20%", left: "45%", d: 0.9, c: "text-crt-blue/15", dur: "24s" },
     { t: "null", top: "88%", left: "38%", d: 2.4, c: "text-moss/20", dur: "17s" },
   ];
-  const cubes = [
-    { top: "24%", left: "24%", s: 28, d: 1.6, dur: "34s" },
-    { top: "60%", left: "86%", s: 36, d: 2.4, dur: "44s" },
-    { top: "76%", left: "50%", s: 20, d: 3, dur: "30s" },
-    { top: "8%", left: "68%", s: 24, d: 1.1, dur: "38s" },
-  ];
-
   return (
     <div ref={containerRef} className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {glyphs.map((g, i) => (
@@ -52,28 +45,6 @@ const FloatingElements = () => {
           >
             {g.t}
           </span>
-        </div>
-      ))}
-
-      {cubes.map((c, i) => (
-        <div
-          key={i}
-          data-depth={c.d}
-          className="absolute transition-transform duration-1000 ease-out hidden sm:block"
-          style={{ top: c.top, left: c.left, perspective: "400px" }}
-        >
-          <div className="code-cube" style={{ width: c.s, height: c.s, animationDuration: c.dur }}>
-            {[
-              `translateZ(${c.s / 2}px)`,
-              `rotateY(180deg) translateZ(${c.s / 2}px)`,
-              `rotateY(90deg) translateZ(${c.s / 2}px)`,
-              `rotateY(-90deg) translateZ(${c.s / 2}px)`,
-              `rotateX(90deg) translateZ(${c.s / 2}px)`,
-              `rotateX(-90deg) translateZ(${c.s / 2}px)`,
-            ].map((t) => (
-              <span key={t} style={{ transform: t }} />
-            ))}
-          </div>
         </div>
       ))}
 
