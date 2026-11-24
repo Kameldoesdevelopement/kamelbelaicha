@@ -20,6 +20,7 @@ const CursorTrail = () => {
     let last = { x: -200, y: -200 };
     let raf = 0;
     let pressed = false;
+    let hovering = false;
 
     const resize = () => {
       const dpr = window.devicePixelRatio || 1;
@@ -30,18 +31,19 @@ const CursorTrail = () => {
 
     const frame = () => {
       ctx.clearRect(0, 0, innerWidth, innerHeight);
-      ring.x += (mouse.x - ring.x) * 0.16;
-      ring.y += (mouse.y - ring.y) * 0.16;
-      ring.r += ((pressed ? 8 : 14) - ring.r) * 0.2;
+      ring.x += (mouse.x - ring.x) * 0.12;
+      ring.y += (mouse.y - ring.y) * 0.12;
+      ring.r += ((pressed ? 7 : hovering ? 22 : 12) - ring.r) * 0.14;
 
       ctx.font = "11px 'Space Mono', monospace";
       glyphs = glyphs.filter((g) => {
-        g.life -= 0.018;
+        g.life -= 0.012;
+        g.vx *= 0.98;
         g.x += g.vx;
         g.y += g.vy;
         if (g.life <= 0) return false;
         const flick = Math.random() > 0.94 ? 0.3 : 1;
-        ctx.fillStyle = `hsla(${g.hue}, 35%, 55%, ${g.life * 0.55 * flick})`;
+        ctx.fillStyle = `hsla(${g.hue}, 35%, 58%, ${g.life * g.life * 0.5 * flick})`;
         ctx.fillText(g.char, g.x, g.y);
         return true;
       });
@@ -50,7 +52,8 @@ const CursorTrail = () => {
         ctx.save();
         ctx.shadowBlur = 12;
         ctx.shadowColor = "hsla(175, 35%, 50%, 0.6)";
-        ctx.strokeStyle = "hsla(175, 35%, 55%, 0.55)";
+        ctx.strokeStyle = hovering ? "hsla(350, 40%, 60%, 0.6)" : "hsla(175, 35%, 55%, 0.5)";
+        if (hovering) { ctx.fillStyle = "hsla(350, 40%, 50%, 0.08)"; ctx.beginPath(); ctx.arc(ring.x, ring.y, ring.r, 0, Math.PI * 2); ctx.fill(); }
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.arc(ring.x, ring.y, ring.r, 0, Math.PI * 2);
@@ -74,8 +77,9 @@ const CursorTrail = () => {
     const move = (e: MouseEvent) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
+      hovering = !!(e.target as Element | null)?.closest?.("a, button, [role=button]");
       if (!mouse.active) { ring.x = mouse.x; ring.y = mouse.y; mouse.active = true; }
-      if (Math.hypot(mouse.x - last.x, mouse.y - last.y) > 26) {
+      if (Math.hypot(mouse.x - last.x, mouse.y - last.y) > 34) {
         last = { x: mouse.x, y: mouse.y };
         glyphs.push({
           x: mouse.x + (Math.random() - 0.5) * 16, y: mouse.y + (Math.random() - 0.5) * 16, life: 1,
