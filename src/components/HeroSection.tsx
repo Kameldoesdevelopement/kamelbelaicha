@@ -1,8 +1,10 @@
+import { useLang } from "@/lib/i18n";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import heroDecay from "@/assets/hero-decay.jpg";
 
 const HeroSection = () => {
+  const { t } = useLang();
   const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
@@ -26,12 +28,12 @@ const HeroSection = () => {
         {/* Tape label */}
         <Link
           to="/about"
-          aria-label="About Kamel Belaicha"
+          aria-label={t("hero.aboutAria")}
           className="tape-label group inline-flex items-center gap-0 mb-8 transition-all duration-300 hover:border-primary/70 hover:shadow-[0_0_16px_hsl(var(--glow-primary)/0.18)] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
         >
-          <span>web developer / digital archaeologist</span>
-          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 transition-all duration-300 group-hover:ml-2 group-hover:max-w-16 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:max-w-16 group-focus-visible:opacity-100">
-            → about
+          <span>{t("hero.role")}</span>
+          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 transition-all duration-300 group-hover:ml-2 group-hover:max-w-24 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:max-w-24 group-focus-visible:opacity-100">
+            {t("hero.aboutLink")}
           </span>
         </Link>
 
@@ -44,9 +46,9 @@ const HeroSection = () => {
 
         {/* Terminal line */}
         <div className="crt-frame inline-block px-4 py-2 mt-6 bg-card/80 backdrop-blur-sm">
-          <div className="font-mono text-sm text-crt-blue flex items-center gap-2 text-glow-crt">
+          <div className="font-mono text-sm text-crt-blue flex items-start gap-2 text-glow-crt">
             <span className="text-accent">{">"}</span>
-            <span>building things that remember</span>
+            <span>{t("hero.tagline")}</span>
             <span className={`text-accent ${showCursor ? "opacity-100" : "opacity-0"}`}>█</span>
           </div>
         </div>
@@ -55,14 +57,14 @@ const HeroSection = () => {
         <div className="absolute top-16 right-8 w-40 h-40 border border-primary/10 opacity-15 rotate-12 hidden md:block drift-slow" />
         <div className="absolute top-24 right-14 w-28 h-28 border border-accent/10 opacity-10 -rotate-6 hidden md:block drift-medium" />
         <div className="absolute bottom-32 right-20 font-label text-[9px] text-dim tracking-[0.3em] uppercase rotate-90 hidden lg:block flicker">
-          scroll ↓
+          {t("hero.scroll")}
         </div>
 
         {/* Bottom line */}
         <div className="mt-20 flex items-center gap-4">
           <div className="h-px bg-primary/20 flex-1" />
           <span className="font-label text-[9px] text-decay-cream/60 tracking-[0.25em] uppercase">
-            archived · 2026
+            {t("hero.archived")}
           </span>
           <div className="h-px bg-primary/20 flex-1" />
         </div>

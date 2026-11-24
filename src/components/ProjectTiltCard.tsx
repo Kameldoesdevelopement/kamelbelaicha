@@ -1,3 +1,4 @@
+import { useLang } from "@/lib/i18n";
 import { type CSSProperties, type PointerEvent, useEffect, useRef } from "react";
 import { BookOpen, ExternalLink, FileText, Gamepad2, Search, Share2, ShoppingBag } from "lucide-react";
 
@@ -9,6 +10,7 @@ export type Project = {
   tech: string[];
   link: string;
   status: string;
+  key: "bb" | "ummto" | "tiny";
   preview: "books" | "resources" | "marketplace" | "learning";
 };
 
@@ -27,6 +29,7 @@ const previewDetails = {
 };
 
 const ProjectPreview = ({ type }: { type: Project["preview"] }) => {
+  const { t } = useLang();
   const details = previewDetails[type];
   const PreviewIcon = details.icon;
 
@@ -40,7 +43,7 @@ const ProjectPreview = ({ type }: { type: Project["preview"] }) => {
 
       {type === "books" && (
         <div className="project-preview__books">
-          <div className="project-preview__heading"><span>Browse the archive</span><Search size={11} /></div>
+          <div className="project-preview__heading"><span>{t("preview.browse")}</span><Search size={11} /></div>
           <div className="project-preview__shelf">
             <i /><i /><i /><i /><i />
           </div>
@@ -53,8 +56,8 @@ const ProjectPreview = ({ type }: { type: Project["preview"] }) => {
           <aside><i /><i /><i /></aside>
           <div className="project-preview__files">
             <span><FileText size={12} /> Data structures.pdf</span>
-            <span><FileText size={12} /> Semester notes</span>
-            <span><FileText size={12} /> Shared resources</span>
+            <span><FileText size={12} /> {t("preview.notes")}</span>
+            <span><FileText size={12} /> {t("preview.shared")}</span>
           </div>
         </div>
       )}
@@ -71,7 +74,7 @@ const ProjectPreview = ({ type }: { type: Project["preview"] }) => {
       {type === "learning" && (
         <div className="project-preview__learning">
           <span className="project-preview__star">★</span>
-          <div><b>1 · 2 · 3</b><small>tap, learn, discover</small></div>
+          <div><b>1 · 2 · 3</b><small>{t("preview.learn")}</small></div>
           <span className="project-preview__shape">●</span>
         </div>
       )}
@@ -80,6 +83,7 @@ const ProjectPreview = ({ type }: { type: Project["preview"] }) => {
 };
 
 const ProjectTiltCard = ({ project }: { project: Project }) => {
+  const { t } = useLang();
   const cardRef = useRef<HTMLAnchorElement>(null);
   const frameRef = useRef<number>();
   const current = useRef({ x: 0, y: 0, glareX: 50, glareY: 50 });
@@ -147,7 +151,7 @@ const ProjectTiltCard = ({ project }: { project: Project }) => {
         onPointerMove={handlePointerMove}
         onPointerLeave={resetTilt}
         onBlur={resetTilt}
-        aria-label={`Visit ${project.title} project`}
+        aria-label={t("projects.visitAria", { title: project.title })}
       >
         <span className="project-tilt-card__glare" />
         <span className="project-tilt-card__scanlines" />
@@ -156,8 +160,8 @@ const ProjectTiltCard = ({ project }: { project: Project }) => {
           <div className="project-tilt-card__copy">
             <div className="project-tilt-card__foreground">
               <div className="project-tilt-card__topline">
-                <span className="tape-label text-[9px]">{project.status}</span>
-                <span className="project-tilt-card__visit">visit <ExternalLink size={12} /></span>
+                <span className="tape-label text-[9px]">{t("projects.live")}</span>
+                <span className="project-tilt-card__visit">{t("projects.visit")} <ExternalLink size={12} /></span>
               </div>
               <h2 className="font-display text-3xl md:text-4xl text-foreground group-hover:text-primary transition-colors text-corrupt">
                 {project.title}
@@ -166,10 +170,10 @@ const ProjectTiltCard = ({ project }: { project: Project }) => {
 
             <div className="project-tilt-card__midground">
               <span className="font-label text-[10px] text-dim tracking-[0.2em] uppercase">
-                {project.id} — {project.category}
+                {project.id} — {t(`projects.${project.key}.cat` as never)}
               </span>
               <p className="font-mono text-sm text-muted-foreground leading-relaxed">
-                {project.description}
+                {t(`projects.${project.key}.desc` as never)}
               </p>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((technology) => (

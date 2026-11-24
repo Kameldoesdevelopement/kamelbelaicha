@@ -14,3 +14,6 @@
 - [x] Add layered archival card depth and four distinct interface previews.
 - [x] Verify desktop interaction, mobile fallback, reduced motion, and project links.
 - [x] Coding-themed background with small 3D objects; remove Ouedkniss; portrait on About; new real BookBerries photo; phone instead of LinkedIn.
+- [x] Connect French text to all pages
+- [x] New cursor animation
+- [x] French responsive check

@@ -1,9 +1,11 @@
+import { useLang } from "@/lib/i18n";
 import Layout from "../components/Layout";
 import ProjectTiltCard, { type Project } from "../components/ProjectTiltCard";
 
 const projects: Project[] = [
   {
     id: "001",
+    key: "bb",
     title: "BookBerries",
     category: "e-commerce",
     description:
@@ -15,6 +17,7 @@ const projects: Project[] = [
   },
   {
     id: "002",
+    key: "ummto",
     title: "UMMTO Share",
     category: "student platform",
     description:
@@ -26,6 +29,7 @@ const projects: Project[] = [
   },
   {
     id: "003",
+    key: "tiny",
     title: "Tiny Explorer",
     category: "educational game",
     description:
@@ -38,16 +42,17 @@ const projects: Project[] = [
 ];
 
 const Projects = () => {
+  const { t } = useLang();
   return (
     <Layout>
       <section className="px-6 py-20 min-h-[80vh]">
         <div className="max-w-6xl mx-auto">
-          <div className="tape-label inline-block mb-4">index / projects</div>
+          <div className="tape-label inline-block mb-4">{t("projects.label")}</div>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4 text-glow">
-            Projects
+            {t("projects.title")}
           </h1>
           <p className="font-mono text-sm text-muted-foreground mb-16 max-w-lg">
-            A collection of things I've built. Each one archived here as a record of process and craft.
+            {t("projects.intro")}
           </p>
 
           <div className="space-y-8">
@@ -57,12 +62,12 @@ const Projects = () => {
           </div>
 
           {/* Empty state */}
-          <div className="mt-8 botanical-border p-12 bg-card flex flex-col items-center justify-center text-center">
+          <div className="mt-8 botanical-border p-6 sm:p-12 bg-card flex flex-col items-center justify-center text-center">
             <div className="font-label text-xs text-moss tracking-[0.2em] uppercase mb-2 breathe">
-              [ archive expanding ]
+              {t("projects.expanding")}
             </div>
             <p className="font-mono text-xs text-dim">
-              More projects will be catalogued here as they emerge from the workshop.
+              {t("projects.expandingText")}
             </p>
           </div>
         </div>

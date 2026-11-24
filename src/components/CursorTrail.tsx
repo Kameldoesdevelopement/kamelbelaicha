@@ -1,99 +1,112 @@
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef } from "react";
 
-interface TrailDot {
-  x: number;
-  y: number;
-  opacity: number;
-  size: number;
-  hue: number;
-}
+type Glyph = { x: number; y: number; life: number; char: string; hue: number; vx: number; vy: number };
+const CHARS = ["0", "1", "<", "/", ">", "{", "}", ";", "_"];
 
+// CRT ring that lags behind the pointer, leaving faint decaying code glyphs.
 const CursorTrail = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const dotsRef = useRef<TrailDot[]>([]);
-  const mouseRef = useRef({ x: -100, y: -100 });
-  const rafRef = useRef<number>(0);
-
-  const animate = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Add new dot at mouse position
-    const { x, y } = mouseRef.current;
-    if (x > 0 && y > 0) {
-      dotsRef.current.push({
-        x,
-        y,
-        opacity: 0.4,
-        size: 3 + Math.random() * 2,
-        hue: Math.random() > 0.5 ? 350 : 175, // rose or teal
-      });
-    }
-
-    // Update and draw dots
-    dotsRef.current = dotsRef.current.filter((dot) => {
-      dot.opacity -= 0.008;
-      dot.y -= 0.2 + Math.random() * 0.3; // slow upward drift
-      dot.x += (Math.random() - 0.5) * 0.5; // slight horizontal wander
-      dot.size *= 0.997;
-
-      if (dot.opacity <= 0) return false;
-
-      ctx.beginPath();
-      ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
-      const saturation = dot.hue === 350 ? "40%" : "30%";
-      const lightness = dot.hue === 350 ? "45%" : "40%";
-      ctx.fillStyle = `hsla(${dot.hue}, ${saturation}, ${lightness}, ${dot.opacity})`;
-      ctx.fill();
-
-      return true;
-    });
-
-    rafRef.current = requestAnimationFrame(animate);
-  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    if (window.matchMedia("(pointer: coarse), (prefers-reduced-motion: reduce)").matches) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const mouse = { x: -200, y: -200, active: false };
+    const ring = { x: -200, y: -200, r: 14 };
+    let glyphs: Glyph[] = [];
+    let last = { x: -200, y: -200 };
+    let raf = 0;
+    let pressed = false;
 
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = innerWidth * dpr;
+      canvas.height = innerHeight * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
-    const handleMove = (e: MouseEvent) => {
-      mouseRef.current = { x: e.clientX, y: e.clientY };
+    const frame = () => {
+      ctx.clearRect(0, 0, innerWidth, innerHeight);
+      ring.x += (mouse.x - ring.x) * 0.16;
+      ring.y += (mouse.y - ring.y) * 0.16;
+      ring.r += ((pressed ? 8 : 14) - ring.r) * 0.2;
+
+      ctx.font = "11px 'Space Mono', monospace";
+      glyphs = glyphs.filter((g) => {
+        g.life -= 0.018;
+        g.x += g.vx;
+        g.y += g.vy;
+        if (g.life <= 0) return false;
+        const flick = Math.random() > 0.94 ? 0.3 : 1;
+        ctx.fillStyle = `hsla(${g.hue}, 35%, 55%, ${g.life * 0.55 * flick})`;
+        ctx.fillText(g.char, g.x, g.y);
+        return true;
+      });
+
+      if (mouse.active) {
+        ctx.save();
+        ctx.shadowBlur = 12;
+        ctx.shadowColor = "hsla(175, 35%, 50%, 0.6)";
+        ctx.strokeStyle = "hsla(175, 35%, 55%, 0.55)";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.arc(ring.x, ring.y, ring.r, 0, Math.PI * 2);
+        ctx.stroke();
+        // tick marks
+        const t = performance.now() / 1400;
+        for (let i = 0; i < 4; i++) {
+          const a = t + (i * Math.PI) / 2;
+          ctx.beginPath();
+          ctx.moveTo(ring.x + Math.cos(a) * (ring.r + 3), ring.y + Math.sin(a) * (ring.r + 3));
+          ctx.lineTo(ring.x + Math.cos(a) * (ring.r + 7), ring.y + Math.sin(a) * (ring.r + 7));
+          ctx.stroke();
+        }
+        ctx.restore();
+        ctx.fillStyle = "hsla(350, 40%, 55%, 0.8)";
+        ctx.fillRect(mouse.x - 1, mouse.y - 1, 2, 2);
+      }
+      raf = requestAnimationFrame(frame);
     };
 
-    const handleLeave = () => {
-      mouseRef.current = { x: -100, y: -100 };
+    const move = (e: MouseEvent) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      if (!mouse.active) { ring.x = mouse.x; ring.y = mouse.y; mouse.active = true; }
+      if (Math.hypot(mouse.x - last.x, mouse.y - last.y) > 26) {
+        last = { x: mouse.x, y: mouse.y };
+        glyphs.push({
+          x: mouse.x + (Math.random() - 0.5) * 16, y: mouse.y + (Math.random() - 0.5) * 16, life: 1,
+          char: CHARS[Math.floor(Math.random() * CHARS.length)], hue: Math.random() > 0.5 ? 350 : 175,
+          vx: (Math.random() - 0.5) * 0.2, vy: -0.25 - Math.random() * 0.2,
+        });
+        if (glyphs.length > 40) glyphs.shift();
+      }
     };
+    const leave = () => { mouse.active = false; };
+    const down = () => { pressed = true; };
+    const up = () => { pressed = false; };
 
     resize();
-    window.addEventListener("resize", resize);
-    window.addEventListener("mousemove", handleMove);
-    document.addEventListener("mouseleave", handleLeave);
-    rafRef.current = requestAnimationFrame(animate);
-
+    addEventListener("resize", resize);
+    addEventListener("mousemove", move);
+    addEventListener("mousedown", down);
+    addEventListener("mouseup", up);
+    document.addEventListener("mouseleave", leave);
+    raf = requestAnimationFrame(frame);
     return () => {
-      window.removeEventListener("resize", resize);
-      window.removeEventListener("mousemove", handleMove);
-      document.removeEventListener("mouseleave", handleLeave);
-      cancelAnimationFrame(rafRef.current);
+      removeEventListener("resize", resize);
+      removeEventListener("mousemove", move);
+      removeEventListener("mousedown", down);
+      removeEventListener("mouseup", up);
+      document.removeEventListener("mouseleave", leave);
+      cancelAnimationFrame(raf);
     };
-  }, [animate]);
+  }, []);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-[999]"
-      style={{ mixBlendMode: "screen" }}
-    />
-  );
+  return <canvas ref={canvasRef} className="fixed inset-0 w-screen h-screen pointer-events-none z-[999]" style={{ mixBlendMode: "screen" }} />;
 };
 
 export default CursorTrail;
